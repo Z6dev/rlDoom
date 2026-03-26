@@ -511,13 +511,6 @@ d_int I_RegisterSong(void *data) {
     music_buffers[handle].mus_event_head = music_buffers[handle].mus_event_begin;
     data_head += sizeof(d_ushort);
 
-    // primary_channel_amount = SHORT( *(d_ushort*)data_head );
-    // data_head += sizeof(d_ushort);
-    // second_channel_amount = SHORT( *(d_ushort*)data_head );
-    // data_head += sizeof(d_ushort);
-    // instrument_amount = SHORT( *(d_ushort*)data_head );
-    // data_head += sizeof(d_ushort);
-
     for (unsigned int c = 0; c < MUS_CHANNEL_AMOUNT; c++) {
         music_buffers[handle].channel_volume[c] = 100;
     }

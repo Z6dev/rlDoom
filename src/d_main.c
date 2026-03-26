@@ -491,7 +491,10 @@ void IdentifyVersion(void) {
     d_char *tntwad;
 
     d_char *doomwaddir;
-    doomwaddir = "resources";
+    doomwaddir = getenv("DOOMWADDIR");
+    if (!doomwaddir) {
+        doomwaddir = "resources";
+    }
 
     // Commercial.
     doom2wad = malloc(strlen(doomwaddir) + 1 + 9 + 1);

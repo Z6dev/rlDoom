@@ -185,7 +185,15 @@ void I_StartTic() {
     KEYMAP(KEY_RIGHT_BRACKET, ']')
     KEYMAP(KEY_GRAVE, '`')
     KEYMAP(KEY_SPACE, ' ')
-    // Key: Tab
+
+    // cursor locking monstrosity
+    if (IsKeyPressed(KEY_ESCAPE)) {
+        EnableCursor();
+    }
+
+    if ((IsMouseButtonPressed(MOUSE_BUTTON_LEFT) || GetKeyPressed()) && !IsCursorHidden()) {
+        DisableCursor();
+    }
 }
 
 //
