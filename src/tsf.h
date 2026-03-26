@@ -47,16 +47,16 @@
 
 #ifdef __cplusplus
 extern "C" {
-    #define CPP_DEFAULT0 = 0
+#define CPP_DEFAULT0 = 0
 #else
-    #define CPP_DEFAULT0
+#define CPP_DEFAULT0
 #endif
 
 //define this if you want the API functions to be static
 #ifdef TSF_STATIC
-    #define TSFDEF static
+#define TSFDEF static
 #else
-    #define TSFDEF extern
+#define TSFDEF extern
 #endif
 
 // The load functions will return a pointer to a struct tsf which all functions
@@ -241,7 +241,7 @@ TSFDEF float tsf_channel_get_pitchrange(tsf *f, int channel);
 TSFDEF float tsf_channel_get_tuning(tsf *f, int channel);
 
 #ifdef __cplusplus
-    #undef CPP_DEFAULT0
+#undef CPP_DEFAULT0
 }
 #endif
 
@@ -256,7 +256,7 @@ TSFDEF float tsf_channel_get_tuning(tsf *f, int channel);
 // Increasing the value significantly lowers the CPU usage of the voice rendering.
 // If LFO affects the low-pass filter it can be hearable even as low as 8.
 #ifndef TSF_RENDER_EFFECTSAMPLEBLOCK
-    #define TSF_RENDER_EFFECTSAMPLEBLOCK 64
+#define TSF_RENDER_EFFECTSAMPLEBLOCK 64
 #endif
 
 // When using tsf_render_short, to do the conversion a buffer of a fixed size is
@@ -264,43 +264,43 @@ TSFDEF float tsf_channel_get_tuning(tsf *f, int channel);
 // Increasing this above 512 should not have a significant impact on performance.
 // The value should be a multiple of TSF_RENDER_EFFECTSAMPLEBLOCK.
 #ifndef TSF_RENDER_SHORTBUFFERBLOCK
-    #define TSF_RENDER_SHORTBUFFERBLOCK 512
+#define TSF_RENDER_SHORTBUFFERBLOCK 512
 #endif
 
 // Grace release time for quick voice off (avoid clicking noise)
 #define TSF_FASTRELEASETIME 0.01f
 
 #if !defined(TSF_MALLOC) || !defined(TSF_FREE) || !defined(TSF_REALLOC)
-    #include <stdlib.h>
-    #define TSF_MALLOC  malloc
-    #define TSF_FREE    free
-    #define TSF_REALLOC realloc
+#include <stdlib.h>
+#define TSF_MALLOC  malloc
+#define TSF_FREE    free
+#define TSF_REALLOC realloc
 #endif
 
 #if !defined(TSF_MEMCPY) || !defined(TSF_MEMSET)
-    #include <string.h>
-    #define TSF_MEMCPY  memcpy
-    #define TSF_MEMSET  memset
+#include <string.h>
+#define TSF_MEMCPY  memcpy
+#define TSF_MEMSET  memset
 #endif
 
 #if !defined(TSF_POW) || !defined(TSF_POWF) || !defined(TSF_EXPF) || !defined(TSF_LOG) || !defined(TSF_TAN) || !defined(TSF_LOG10) || !defined(TSF_SQRT)
-    #include <math.h>
-    #if !defined(__cplusplus) && !defined(NAN) && !defined(powf) && !defined(expf) && !defined(sqrtf)
-        #define powf (float)pow // deal with old math.h
-        #define expf (float)exp // files that come without
-        #define sqrtf (float)sqrt // powf, expf and sqrtf
-    #endif
-    #define TSF_POW     pow
-    #define TSF_POWF    powf
-    #define TSF_EXPF    expf
-    #define TSF_LOG     log
-    #define TSF_TAN     tan
-    #define TSF_LOG10   log10
-    #define TSF_SQRTF   sqrtf
+#include <math.h>
+#if !defined(__cplusplus) && !defined(NAN) && !defined(powf) && !defined(expf) && !defined(sqrtf)
+#define powf (float)pow // deal with old math.h
+#define expf (float)exp // files that come without
+#define sqrtf (float)sqrt // powf, expf and sqrtf
+#endif
+#define TSF_POW     pow
+#define TSF_POWF    powf
+#define TSF_EXPF    expf
+#define TSF_LOG     log
+#define TSF_TAN     tan
+#define TSF_LOG10   log10
+#define TSF_SQRTF   sqrtf
 #endif
 
 #ifndef TSF_NO_STDIO
-    #include <stdio.h>
+#include <stdio.h>
 #endif
 
 #define TSF_TRUE 1
@@ -350,12 +350,12 @@ static int tsf_stream_stdio_skip(FILE *f, unsigned int count) {
 TSFDEF tsf *tsf_load_filename(const char *filename) {
     tsf *res;
     struct tsf_stream stream = {TSF_NULL, (int (*)(void *, void *, unsigned int))&tsf_stream_stdio_read, (int (*)(void *, unsigned int))&tsf_stream_stdio_skip};
-    #if __STDC_WANT_SECURE_LIB__
+#if __STDC_WANT_SECURE_LIB__
     FILE *f = TSF_NULL;
     fopen_s(&f, filename, "rb");
-    #else
+#else
     FILE *f = fopen(filename, "rb");
-    #endif
+#endif
     if (!f) {
         //if (e) *e = TSF_FILENOTFOUND;
         return TSF_NULL;
@@ -468,7 +468,8 @@ struct tsf_hydra_shdr {
 #define TSFR(FIELD) stream->read(stream->data, &i->FIELD, sizeof(i->FIELD));
 static void tsf_hydra_read_phdr(struct tsf_hydra_phdr *i, struct tsf_stream *stream) {
     TSFR(presetName)
-    TSFR(preset) TSFR(bank) TSFR(presetBagNdx) TSFR(library) TSFR(genre) TSFR(morphology)
+    TSFR(preset)
+    TSFR(bank) TSFR(presetBagNdx) TSFR(library) TSFR(genre) TSFR(morphology)
 }
 static void tsf_hydra_read_pbag(struct tsf_hydra_pbag *i, struct tsf_stream *stream) {
     TSFR(genNdx)
@@ -476,7 +477,8 @@ static void tsf_hydra_read_pbag(struct tsf_hydra_pbag *i, struct tsf_stream *str
 }
 static void tsf_hydra_read_pmod(struct tsf_hydra_pmod *i, struct tsf_stream *stream) {
     TSFR(modSrcOper)
-    TSFR(modDestOper) TSFR(modAmount) TSFR(modAmtSrcOper) TSFR(modTransOper)
+    TSFR(modDestOper)
+    TSFR(modAmount) TSFR(modAmtSrcOper) TSFR(modTransOper)
 }
 static void tsf_hydra_read_pgen(struct tsf_hydra_pgen *i, struct tsf_stream *stream) {
     TSFR(genOper)
@@ -492,7 +494,8 @@ static void tsf_hydra_read_ibag(struct tsf_hydra_ibag *i, struct tsf_stream *str
 }
 static void tsf_hydra_read_imod(struct tsf_hydra_imod *i, struct tsf_stream *stream) {
     TSFR(modSrcOper)
-    TSFR(modDestOper) TSFR(modAmount) TSFR(modAmtSrcOper) TSFR(modTransOper)
+    TSFR(modDestOper)
+    TSFR(modAmount) TSFR(modAmtSrcOper) TSFR(modTransOper)
 }
 static void tsf_hydra_read_igen(struct tsf_hydra_igen *i, struct tsf_stream *stream) {
     TSFR(genOper)
@@ -500,7 +503,8 @@ static void tsf_hydra_read_igen(struct tsf_hydra_igen *i, struct tsf_stream *str
 }
 static void tsf_hydra_read_shdr(struct tsf_hydra_shdr *i, struct tsf_stream *stream) {
     TSFR(sampleName)
-    TSFR(start) TSFR(end) TSFR(startLoop) TSFR(endLoop) TSFR(sampleRate) TSFR(originalPitch) TSFR(pitchCorrection) TSFR(sampleLink) TSFR(sampleType)
+    TSFR(start)
+    TSFR(end) TSFR(startLoop) TSFR(endLoop) TSFR(sampleRate) TSFR(originalPitch) TSFR(pitchCorrection) TSFR(sampleLink) TSFR(sampleType)
 }
 #undef TSFR
 
@@ -1030,15 +1034,15 @@ static int tsf_decode_ogg(const tsf_u8 *pSmpl, const tsf_u8 *pSmplEnd, float **p
     stb_vorbis *v;
 
     // Use whatever stb_vorbis API that is available (either pull or push)
-    #if !defined(STB_VORBIS_NO_PULLDATA_API) && !defined(STB_VORBIS_NO_FROMMEMORY)
+#if !defined(STB_VORBIS_NO_PULLDATA_API) && !defined(STB_VORBIS_NO_FROMMEMORY)
     v = stb_vorbis_open_memory(pSmpl, (int)(pSmplEnd - pSmpl), TSF_NULL, TSF_NULL);
-    #else
+#else
     {
         int use, err;
         v = stb_vorbis_open_pushdata(pSmpl, (int)(pSmplEnd - pSmpl), &use, &err, TSF_NULL);
         pSmpl += use;
     }
-    #endif
+#endif
     if (v == TSF_NULL) return 0;
 
     for (;;) {
@@ -1046,17 +1050,17 @@ static int tsf_decode_ogg(const tsf_u8 *pSmpl, const tsf_u8 *pSmplEnd, float **p
         int n_samples;
 
         // Decode one frame of vorbis samples with whatever stb_vorbis API that is available
-    #if !defined(STB_VORBIS_NO_PULLDATA_API) && !defined(STB_VORBIS_NO_FROMMEMORY)
+#if !defined(STB_VORBIS_NO_PULLDATA_API) && !defined(STB_VORBIS_NO_FROMMEMORY)
         n_samples = stb_vorbis_get_frame_float(v, TSF_NULL, &outputs);
         if (!n_samples) break;
-    #else
+#else
         if (pSmpl >= pSmplEnd) break;
         {
             int use = stb_vorbis_decode_frame_pushdata(v, pSmpl, (int)(pSmplEnd - pSmpl), TSF_NULL, &outputs, &n_samples);
             pSmpl += use;
         }
         if (!n_samples) continue;
-    #endif
+#endif
 
         // Expand our output buffer if necessary then copy over the decoded frame samples
         resNum += n_samples;

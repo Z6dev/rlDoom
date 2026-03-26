@@ -199,11 +199,11 @@ static AudioStream mus_stream;
 #define MIDI_CHANNELS    2
 
 #if MIDI_CHANNELS == 1
-    #define MIDI_TSF_OPTIONS TSF_MONO
+#define MIDI_TSF_OPTIONS TSF_MONO
 #elif MIDI_CHANNELS == 2
-    #define MIDI_TSF_OPTIONS TSF_STEREO_INTERLEAVED
+#define MIDI_TSF_OPTIONS TSF_STEREO_INTERLEAVED
 #else
-    #error "Unsupported MIDI type"
+#error "Unsupported MIDI type"
 #endif
 
 void MidiInputCallback(void *buffer, unsigned int frames) {

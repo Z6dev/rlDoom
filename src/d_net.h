@@ -20,11 +20,11 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __D_NET__
-    #define __D_NET__
+#define __D_NET__
 
-    #include "d_player.h"
+#include "d_player.h"
 
-    #include "doomtype.h"
+#include "doomtype.h"
 
 //
 // Network play related stuff.
@@ -34,13 +34,13 @@
 //  be transmitted.
 //
 
-    #define DOOMCOM_ID		0x12345678l
+#define DOOMCOM_ID		0x12345678l
 
 // Max computers/players in a game.
-    #define MAXNETNODES		8
+#define MAXNETNODES		8
 
 // Networking and tick handling related.
-    #define BACKUPTICS		12
+#define BACKUPTICS		12
 
 typedef enum {
     CMD_SEND = 1,

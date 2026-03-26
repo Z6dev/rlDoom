@@ -20,9 +20,9 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __R_THINGS__
-    #define __R_THINGS__
+#define __R_THINGS__
 
-    #define MAXVISSPRITES  	128
+#define MAXVISSPRITES  	128
 
 extern vissprite_t vissprites[MAXVISSPRITES];
 extern vissprite_t *vissprite_p;

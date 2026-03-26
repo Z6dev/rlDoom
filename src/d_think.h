@@ -22,7 +22,7 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __D_THINK__
-    #define __D_THINK__
+#define __D_THINK__
 
 //
 // Experimental stuff.

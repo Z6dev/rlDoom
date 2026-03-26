@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -41,40 +41,32 @@
 
 d_int mb_used = 6;
 
-void I_Tactile(d_int on, d_int off, d_int total)
-{
+void I_Tactile(d_int on, d_int off, d_int total) {
 }
 
-ticcmd_t	emptycmd;
-ticcmd_t* I_BaseTiccmd(void)
-{
+ticcmd_t emptycmd;
+ticcmd_t *I_BaseTiccmd(void) {
     return &emptycmd;
 }
 
-
-d_int  I_GetHeapSize (void)
-{
-    return mb_used*1024*1024;
+d_int I_GetHeapSize(void) {
+    return mb_used * 1024 * 1024;
 }
 
-byte* I_ZoneBase (d_int*	size)
-{
-    *size = mb_used*1024*1024;
-    return (byte *) malloc (*size);
+byte *I_ZoneBase(d_int *size) {
+    *size = mb_used * 1024 * 1024;
+    return (byte *)malloc(*size);
 }
-
-
 
 //
 // I_GetTime
 // returns time in 1/70th second tics
 //
-d_int  I_GetTime (void)
-{
+d_int I_GetTime(void) {
     d_int new_tics;
     static double base_time = 0.0;
 
-    if( base_time == 0.0 )
+    if (base_time == 0.0)
         base_time = GetTime();
 
     new_tics = (GetTime() - base_time) * TICRATE;
@@ -82,13 +74,10 @@ d_int  I_GetTime (void)
     return new_tics;
 }
 
-
-
 //
 // I_Init
 //
-void I_Init (void)
-{
+void I_Init(void) {
     I_InitGraphics();
     I_InitSound();
     I_InitMusic();
@@ -97,35 +86,30 @@ void I_Init (void)
 //
 // I_Quit
 //
-void I_Quit (void)
-{
-    D_QuitNetGame ();
+void I_Quit(void) {
+    D_QuitNetGame();
     I_ShutdownSound();
     I_ShutdownMusic();
-    M_SaveDefaults ();
+    M_SaveDefaults();
     I_ShutdownGraphics();
     exit(0);
 }
 
-void I_WaitVBL(d_int count)
-{
-    WaitTime( count * 0.014285 );
+void I_WaitVBL(d_int count) {
+    WaitTime(count * 0.014285);
 }
 
-void I_BeginRead(void)
-{
+void I_BeginRead(void) {
 }
 
-void I_EndRead(void)
-{
+void I_EndRead(void) {
 }
 
-byte* I_AllocLow(d_int length)
-{
-    byte*	mem;
-        
-    mem = (byte *)malloc (length);
-    memset (mem,0,length);
+byte *I_AllocLow(d_int length) {
+    byte *mem;
+
+    mem = (byte *)malloc(length);
+    memset(mem, 0, length);
     return mem;
 }
 
@@ -134,25 +118,24 @@ byte* I_AllocLow(d_int length)
 //
 extern boolean demorecording;
 
-void I_Error (d_char *error, ...)
-{
-    va_list	argptr;
+void I_Error(d_char *error, ...) {
+    va_list argptr;
 
     // Message first.
-    va_start (argptr,error);
-    fprintf (stderr, "Error: ");
-    vfprintf (stderr,error,argptr);
-    fprintf (stderr, "\n");
-    va_end (argptr);
+    va_start(argptr, error);
+    fprintf(stderr, "Error: ");
+    vfprintf(stderr, error, argptr);
+    fprintf(stderr, "\n");
+    va_end(argptr);
 
-    fflush( stderr );
+    fflush(stderr);
 
     // Shutdown. Here might be other errors.
     if (demorecording)
         G_CheckDemoStatus();
 
-    D_QuitNetGame ();
+    D_QuitNetGame();
     I_ShutdownGraphics();
-    
+
     exit(-1);
 }

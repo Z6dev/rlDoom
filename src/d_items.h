@@ -20,10 +20,10 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __D_ITEMS__
-    #define __D_ITEMS__
+#define __D_ITEMS__
 
-    #include "doomtype.h"
-    #include "doomdef.h"
+#include "doomtype.h"
+#include "doomdef.h"
 
 // Weapon info: sprite frames, ammunition use.
 typedef struct

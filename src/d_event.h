@@ -20,9 +20,9 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __D_EVENT__
-    #define __D_EVENT__
+#define __D_EVENT__
 
-    #include "doomtype.h"
+#include "doomtype.h"
 
 //
 // Event handling.
@@ -93,7 +93,7 @@ typedef enum {
 //
 // GLOBAL VARIABLES
 //
-    #define MAXEVENTS		64
+#define MAXEVENTS		64
 
 extern event_t events[MAXEVENTS];
 extern d_int eventhead;

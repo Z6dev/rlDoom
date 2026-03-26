@@ -20,9 +20,9 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __R_PLANE__
-    #define __R_PLANE__
+#define __R_PLANE__
 
-    #include "r_data.h"
+#include "r_data.h"
 
 // Visplane related.
 extern short *lastopening;

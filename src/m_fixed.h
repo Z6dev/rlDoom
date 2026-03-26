@@ -20,15 +20,15 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __M_FIXED__
-    #define __M_FIXED__
+#define __M_FIXED__
 
-    #include "doomtype.h"
+#include "doomtype.h"
 
 //
 // Fixed point, 32bit as 16.16.
 //
-    #define FRACBITS		16
-    #define FRACUNIT		(1<<FRACBITS)
+#define FRACBITS		16
+#define FRACUNIT		(1<<FRACBITS)
 
 typedef d_int fixed_t;
 

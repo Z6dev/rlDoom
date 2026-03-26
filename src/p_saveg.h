@@ -20,7 +20,7 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __P_SAVEG__
-    #define __P_SAVEG__
+#define __P_SAVEG__
 
 // Persistent storage/archiving.
 // These are the load / save game routines.

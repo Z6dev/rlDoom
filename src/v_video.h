@@ -22,20 +22,20 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __V_VIDEO__
-    #define __V_VIDEO__
+#define __V_VIDEO__
 
-    #include "doomtype.h"
+#include "doomtype.h"
 
-    #include "doomdef.h"
+#include "doomdef.h"
 
 // Needed because we are refering to patches.
-    #include "r_data.h"
+#include "r_data.h"
 
 //
 // VIDEO
 //
 
-    #define CENTERY			(SCREENHEIGHT/2)
+#define CENTERY			(SCREENHEIGHT/2)
 
 // Screen 0 is the screen updated by I_Update screen.
 // Screen 1 is an extra buffer.

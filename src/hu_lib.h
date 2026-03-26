@@ -19,21 +19,21 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __HULIB__
-    #define __HULIB__
+#define __HULIB__
 
 // We are referring to patches.
-    #include "r_defs.h"
+#include "r_defs.h"
 
 // background and foreground screen numbers
 // different from other modules.
-    #define BG			1
-    #define FG			0
+#define BG			1
+#define FG			0
 
 // font stuff
-    #define HU_CHARERASE	KEY_BACKSPACE
+#define HU_CHARERASE	KEY_BACKSPACE
 
-    #define HU_MAXLINES		4
-    #define HU_MAXLINELENGTH	80
+#define HU_MAXLINES		4
+#define HU_MAXLINELENGTH	80
 
 //
 // Typedefs of widgets

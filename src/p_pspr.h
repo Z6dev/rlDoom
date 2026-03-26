@@ -20,12 +20,12 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __P_PSPR__
-    #define __P_PSPR__
+#define __P_PSPR__
 
 // Basic data types.
 // Needs fixed point, and BAM angles.
-    #include "m_fixed.h"
-    #include "tables.h"
+#include "m_fixed.h"
+#include "tables.h"
 
 //
 // Needs to include the precompiled
@@ -34,14 +34,14 @@
 // This includes all the data for thing animation,
 // i.e. the Thing Atrributes table
 // and the Frame Sequence table.
-    #include "info.h"
+#include "info.h"
 
 //
 // Frame flags:
 // handles maximum brightness (torches, muzzle flare, light sources)
 //
-    #define FF_FULLBRIGHT	0x8000	// flag in thing->frame
-    #define FF_FRAMEMASK	0x7fff
+#define FF_FULLBRIGHT	0x8000	// flag in thing->frame
+#define FF_FRAMEMASK	0x7fff
 
 //
 // Overlay psprites are scaled shapes

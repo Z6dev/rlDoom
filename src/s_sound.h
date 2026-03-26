@@ -20,7 +20,7 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __S_SOUND__
-    #define __S_SOUND__
+#define __S_SOUND__
 
 //
 // Initializes sound stuff, including volume

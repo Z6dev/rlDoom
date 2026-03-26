@@ -20,9 +20,9 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __M_MENU__
-    #define __M_MENU__
+#define __M_MENU__
 
-    #include "d_event.h"
+#include "d_event.h"
 
 //
 // MENUS

@@ -20,29 +20,29 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __R_DEFS__
-    #define __R_DEFS__
+#define __R_DEFS__
 
 // Screenwidth.
-    #include "doomdef.h"
+#include "doomdef.h"
 
 // Some more or less basic data types
 // we depend on.
-    #include "m_fixed.h"
+#include "m_fixed.h"
 
 // We rely on the thinker data struct
 // to handle sound origins in sectors.
-    #include "d_think.h"
+#include "d_think.h"
 // SECTORS do store MObjs anyway.
-    #include "p_mobj.h"
+#include "p_mobj.h"
 
 // Silhouette, needed for clipping Segs (mainly)
 // and sprites representing things.
-    #define SIL_NONE		0
-    #define SIL_BOTTOM		1
-    #define SIL_TOP			2
-    #define SIL_BOTH		3
+#define SIL_NONE		0
+#define SIL_BOTTOM		1
+#define SIL_TOP			2
+#define SIL_BOTH		3
 
-    #define MAXDRAWSEGS		256
+#define MAXDRAWSEGS		256
 
 //
 // INTERNAL MAP TYPES

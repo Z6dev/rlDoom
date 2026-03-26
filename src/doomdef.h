@@ -21,11 +21,11 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __DOOMDEF__
-    #define __DOOMDEF__
+#define __DOOMDEF__
 
-    #include <stdio.h>
-    #include <string.h>
-    #include "doomtype.h"
+#include <stdio.h>
+#include <string.h>
+#include "doomtype.h"
 
 //
 // Global parameters/defines.
@@ -68,7 +68,7 @@ typedef enum {
 
 // If rangecheck is undefined,
 // most parameter validation debugging code will not be compiled
-    #define RANGECHECK
+#define RANGECHECK
 
 // This one switches between MIT SHM (no proper mouse)
 // and XFree86 DGA (mickey sampling). The original
@@ -79,28 +79,28 @@ typedef enum {
 // For resize of screen, at start of game.
 // It will not work dynamically, see visplanes.
 //
-    #define BASE_WIDTH		320
+#define BASE_WIDTH		320
 
 // It is educational but futile to change this
 //  scaling e.g. to 2. Drawing of status bar,
 //  menues etc. is tied to the scale implied
 //  by the graphics.
-    #define SCREEN_MUL		1
-    #define INV_ASPECT_RATIO	0.625 // 0.75, ideally
+#define SCREEN_MUL		1
+#define INV_ASPECT_RATIO	0.625 // 0.75, ideally
 
 // Defines suck. C sucks.
 // C++ might sucks for OOP, but it sure is a better C.
 // So there.
-    #define SCREENWIDTH  320
+#define SCREENWIDTH  320
 //SCREEN_MUL*BASE_WIDTH //320
-    #define SCREENHEIGHT 200
+#define SCREENHEIGHT 200
 //(int)(SCREEN_MUL*BASE_WIDTH*INV_ASPECT_RATIO) //200
 
 // The maximum number of players, multiplayer/networking.
-    #define MAXPLAYERS		4
+#define MAXPLAYERS		4
 
 // State updates, number of tics / second.
-    #define TICRATE		35
+#define TICRATE		35
 
 // The current state of the game: whether we are
 // playing, gazing at the intermission screen,
@@ -117,12 +117,12 @@ typedef enum {
 //
 
 // Skill flags.
-    #define MTF_EASY		1
-    #define MTF_NORMAL		2
-    #define MTF_HARD		4
+#define MTF_EASY		1
+#define MTF_NORMAL		2
+#define MTF_HARD		4
 
 // Deaf monsters/do not react to sound.
-    #define MTF_AMBUSH		8
+#define MTF_AMBUSH		8
 
 typedef enum {
     sk_baby,
@@ -209,37 +209,37 @@ typedef enum {
 // This is the stuff configured by Setup.Exe.
 // Most key data are simple ascii (uppercased).
 //
-    #define D_KEY_RIGHTARROW  0xae
-    #define D_KEY_LEFTARROW   0xac
-    #define D_KEY_UPARROW     0xad
-    #define D_KEY_DOWNARROW   0xaf
-    #define D_KEY_ESCAPE      0x1b
-    #define D_KEY_ENTER       0xd
-    #define D_KEY_TAB         0x9
-    #define D_KEY_F1         (0x80+0x3b)
-    #define D_KEY_F2         (0x80+0x3c)
-    #define D_KEY_F3         (0x80+0x3d)
-    #define D_KEY_F4         (0x80+0x3e)
-    #define D_KEY_F5         (0x80+0x3f)
-    #define D_KEY_F6         (0x80+0x40)
-    #define D_KEY_F7         (0x80+0x41)
-    #define D_KEY_F8         (0x80+0x42)
-    #define D_KEY_F9         (0x80+0x43)
-    #define D_KEY_F10        (0x80+0x44)
-    #define D_KEY_F11        (0x80+0x57)
-    #define D_KEY_F12        (0x80+0x58)
+#define D_KEY_RIGHTARROW  0xae
+#define D_KEY_LEFTARROW   0xac
+#define D_KEY_UPARROW     0xad
+#define D_KEY_DOWNARROW   0xaf
+#define D_KEY_ESCAPE      0x1b
+#define D_KEY_ENTER       0xd
+#define D_KEY_TAB         0x9
+#define D_KEY_F1         (0x80+0x3b)
+#define D_KEY_F2         (0x80+0x3c)
+#define D_KEY_F3         (0x80+0x3d)
+#define D_KEY_F4         (0x80+0x3e)
+#define D_KEY_F5         (0x80+0x3f)
+#define D_KEY_F6         (0x80+0x40)
+#define D_KEY_F7         (0x80+0x41)
+#define D_KEY_F8         (0x80+0x42)
+#define D_KEY_F9         (0x80+0x43)
+#define D_KEY_F10        (0x80+0x44)
+#define D_KEY_F11        (0x80+0x57)
+#define D_KEY_F12        (0x80+0x58)
 
-    #define D_KEY_BACKSPACE   127
-    #define D_KEY_PAUSE       0xff
+#define D_KEY_BACKSPACE   127
+#define D_KEY_PAUSE       0xff
 
-    #define D_KEY_EQUALS      0x3d
-    #define D_KEY_MINUS       0x2d
+#define D_KEY_EQUALS      0x3d
+#define D_KEY_MINUS       0x2d
 
-    #define D_KEY_RSHIFT     (0x80+0x36)
-    #define D_KEY_RCTRL      (0x80+0x1d)
-    #define D_KEY_RALT       (0x80+0x38)
+#define D_KEY_RSHIFT     (0x80+0x36)
+#define D_KEY_RCTRL      (0x80+0x1d)
+#define D_KEY_RALT       (0x80+0x38)
 
-    #define D_KEY_LALT        D_KEY_RALT
+#define D_KEY_LALT        D_KEY_RALT
 
 boolean D_StrCaseEqual(const d_char *const left, const d_char *const right);
 boolean D_StrNCaseEqual(const d_char *const left, const d_char *const right, size_t n);

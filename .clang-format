@@ -32,7 +32,6 @@ SortIncludes: false
 
 # --- Macros ---
 SkipMacroDefinitionBody: true
-IndentPPDirectives: BeforeHash
 
 # --- Pointers and References ---
 PointerAlignment: Right

@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -19,7 +19,6 @@
 //
 //-----------------------------------------------------------------------------
 
-
 #ifndef __I_SYSTEM__
 #define __I_SYSTEM__
 
@@ -27,18 +26,16 @@
 #include "d_event.h"
 
 // Called by DoomMain.
-void I_Init (void);
+void I_Init(void);
 
 // Called by startup code
 // to get the ammount of memory to malloc
 // for the zone management.
-byte*	I_ZoneBase (d_int *size);
-
+byte *I_ZoneBase(d_int *size);
 
 // Called by D_DoomLoop,
 // returns current time in tics.
-d_int I_GetTime (void);
-
+d_int I_GetTime(void);
 
 //
 // Called by D_DoomLoop,
@@ -48,15 +45,14 @@ d_int I_GetTime (void);
 // are performed here (joystick reading).
 // Can call D_PostEvent.
 //
-void I_StartFrame (void);
-
+void I_StartFrame(void);
 
 //
 // Called by D_DoomLoop,
 // called before processing each tic in a frame.
 // Quick syncronous operations are performed here.
 // Can call D_PostEvent.
-void I_StartTic (void);
+void I_StartTic(void);
 
 // Asynchronous interrupt functions should maintain private queues
 // that are read by the synchronous functions
@@ -66,23 +62,19 @@ void I_StartTic (void);
 // or calls a loadable driver to build it.
 // This ticcmd will then be modified by the gameloop
 // for normal input.
-ticcmd_t* I_BaseTiccmd (void);
-
+ticcmd_t *I_BaseTiccmd(void);
 
 // Called by M_Responder when quit is selected.
 // Clean exit, displays sell blurb.
-void I_Quit (void);
-
+void I_Quit(void);
 
 // Allocates from low memory under dos,
 // just mallocs under unix
-byte* I_AllocLow (d_int length);
+byte *I_AllocLow(d_int length);
 
-void I_Tactile (d_int on, d_int off, d_int total);
+void I_Tactile(d_int on, d_int off, d_int total);
 
-
-void I_Error (d_char *error, ...);
-
+void I_Error(d_char *error, ...);
 
 #endif
 //-----------------------------------------------------------------------------

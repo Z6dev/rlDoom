@@ -20,21 +20,21 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __M_SWAP__
-    #define __M_SWAP__
+#define __M_SWAP__
 
-    #include "doomtype.h"
+#include "doomtype.h"
 
 // Endianess handling.
 // WAD files are stored little endian.
-    #ifdef __BIG_ENDIAN__
+#ifdef __BIG_ENDIAN__
 d_short SwapSHORT(d_short);
 d_long SwapLONG(d_long);
-        #define SHORT(x) ((d_short)SwapSHORT((d_ushort) (x)))
-        #define LONG(x)  ( (d_long)SwapLONG(  (d_ulong) (x)))
-    #else
-        #define SHORT(x) (x)
-        #define LONG(x)  (x)
-    #endif
+#define SHORT(x) ((d_short)SwapSHORT((d_ushort) (x)))
+#define LONG(x)  ( (d_long)SwapLONG(  (d_ulong) (x)))
+#else
+#define SHORT(x) (x)
+#define LONG(x)  (x)
+#endif
 
 #endif
 //-----------------------------------------------------------------------------

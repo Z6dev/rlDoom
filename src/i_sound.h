@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -28,8 +28,6 @@
 #include "doomstat.h"
 #include "sounds.h"
 
-
-
 // Init at program start...
 void I_InitSound();
 
@@ -40,7 +38,6 @@ void I_SubmitSound(void);
 // ... shut down and relase at program termination.
 void I_ShutdownSound(void);
 
-
 //
 //  SFX I/O
 //
@@ -49,10 +46,10 @@ void I_ShutdownSound(void);
 void I_SetChannels();
 
 // Get raw data lump index for sound descriptor.
-d_int I_GetSfxLumpNum (sfxinfo_t* sfxinfo );
+d_int I_GetSfxLumpNum(sfxinfo_t *sfxinfo);
 
 // Starts a sound in a particular sound channel.
-d_int I_StartSound ( d_int id, d_int vol, d_int sep, d_int pitch, d_int priority );
+d_int I_StartSound(d_int id, d_int vol, d_int sep, d_int pitch, d_int priority);
 
 // Stops a sound channel.
 void I_StopSound(d_int handle);
@@ -64,13 +61,7 @@ d_int I_SoundIsPlaying(d_int handle);
 
 // Updates the volume, separation,
 //  and pitch of a sound channel.
-void
-I_UpdateSoundParams
-( d_int		handle,
-  d_int		vol,
-  d_int		sep,
-  d_int		pitch );
-
+void I_UpdateSoundParams(d_int handle, d_int vol, d_int sep, d_int pitch);
 
 //
 //  MUSIC I/O
@@ -88,16 +79,11 @@ d_int I_RegisterSong(void *data);
 //  plays a song, and when the song is done,
 //  starts playing it again in an endless loop.
 // Horrible thing to do, considering.
-void
-I_PlaySong
-( d_int		handle,
-  d_int		looping );
+void I_PlaySong(d_int handle, d_int looping);
 // Stops a song over 3 seconds.
 void I_StopSong(d_int handle);
 // See above (register), then think backwards
 void I_UnRegisterSong(d_int handle);
-
-
 
 #endif
 //-----------------------------------------------------------------------------

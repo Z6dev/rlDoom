@@ -20,7 +20,7 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __P_TICK__
-    #define __P_TICK__
+#define __P_TICK__
 
 // Called by C_Ticker,
 // can call G_PlayerExited.

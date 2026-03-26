@@ -25,15 +25,15 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __D_STATE__
-    #define __D_STATE__
+#define __D_STATE__
 
 // We need globally shared data structures,
 //  for defining the global state variables.
-    #include "doomdata.h"
-    #include "d_net.h"
+#include "doomdata.h"
+#include "d_net.h"
 
 // We need the playr data structure as well.
-    #include "d_player.h"
+#include "d_player.h"
 
 // ------------------------
 // Command line parameters.
@@ -182,7 +182,7 @@ extern player_t players[MAXPLAYERS];
 extern boolean playeringame[MAXPLAYERS];
 
 // Player spawn spots for deathmatch.
-    #define MAX_DM_STARTS   10
+#define MAX_DM_STARTS   10
 extern mapthing_t deathmatchstarts[MAX_DM_STARTS];
 extern mapthing_t *deathmatch_p;
 

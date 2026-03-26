@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -25,8 +25,8 @@
 
 #include <string.h>
 
-d_int     myargc;
-d_char**  myargv;
+d_int myargc;
+d_char **myargv;
 
 //
 // M_CheckParm
@@ -34,19 +34,13 @@ d_char**  myargv;
 // in the program's command line arguments.
 // Returns the argument number (1 to argc-1)
 // or 0 if not present
-d_int M_CheckParm (d_char *check)
-{
-    d_int		i;
+d_int M_CheckParm(d_char *check) {
+    d_int i;
 
-    for (i = 1;i<myargc;i++)
-    {
-        if ( D_StrCaseEqual(check, myargv[i]) )
+    for (i = 1; i < myargc; i++) {
+        if (D_StrCaseEqual(check, myargv[i]))
             return i;
     }
 
     return 0;
 }
-
-
-
-

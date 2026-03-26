@@ -22,13 +22,13 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __DOOMDATA__
-    #define __DOOMDATA__
+#define __DOOMDATA__
 
 // The most basic types we use, portability.
-    #include "doomtype.h"
+#include "doomtype.h"
 
 // Some global defines, that configure the game.
-    #include "doomdef.h"
+#include "doomdef.h"
 
 //
 // Map level types.
@@ -90,14 +90,14 @@ typedef struct
 //
 
 // Solid, is an obstacle.
-    #define ML_BLOCKING		1
+#define ML_BLOCKING		1
 
 // Blocks monsters only.
-    #define ML_BLOCKMONSTERS	2
+#define ML_BLOCKMONSTERS	2
 
 // Backside will not be present at all
 //  if not two sided.
-    #define ML_TWOSIDED		4
+#define ML_TWOSIDED		4
 
 // If a texture is pegged, the texture will have
 // the end exposed to air held constant at the
@@ -109,22 +109,22 @@ typedef struct
 // top and bottom textures (use next to windows).
 
 // upper texture unpegged
-    #define ML_DONTPEGTOP		8
+#define ML_DONTPEGTOP		8
 
 // lower texture unpegged
-    #define ML_DONTPEGBOTTOM	16
+#define ML_DONTPEGBOTTOM	16
 
 // In AutoMap: don't map as two sided: IT'S A SECRET!
-    #define ML_SECRET		32
+#define ML_SECRET		32
 
 // Sound rendering: don't let sound cross two of these.
-    #define ML_SOUNDBLOCK		64
+#define ML_SOUNDBLOCK		64
 
 // Don't draw on the automap at all.
-    #define ML_DONTDRAW		128
+#define ML_DONTDRAW		128
 
 // Set if already seen, thus drawn in automap.
-    #define ML_MAPPED		256
+#define ML_MAPPED		256
 
 // Sector definition, from editing.
 typedef struct
@@ -161,7 +161,7 @@ typedef struct
 // BSP node structure.
 
 // Indicate a leaf.
-    #define NF_SUBSECTOR	0x8000
+#define NF_SUBSECTOR	0x8000
 
 typedef struct
 {

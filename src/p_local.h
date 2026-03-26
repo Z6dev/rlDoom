@@ -20,40 +20,40 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __P_LOCAL__
-    #define __P_LOCAL__
+#define __P_LOCAL__
 
-    #include "r_local.h"
+#include "r_local.h"
 
-    #define FLOATSPEED		(FRACUNIT*4)
+#define FLOATSPEED		(FRACUNIT*4)
 
-    #define MAXHEALTH		100
-    #define VIEWHEIGHT		(41*FRACUNIT)
+#define MAXHEALTH		100
+#define VIEWHEIGHT		(41*FRACUNIT)
 
 // mapblocks are used to check movement
 // against lines and things
-    #define MAPBLOCKUNITS	128
-    #define MAPBLOCKSIZE	(MAPBLOCKUNITS*FRACUNIT)
-    #define MAPBLOCKSHIFT	(FRACBITS+7)
-    #define MAPBMASK		(MAPBLOCKSIZE-1)
-    #define MAPBTOFRAC		(MAPBLOCKSHIFT-FRACBITS)
+#define MAPBLOCKUNITS	128
+#define MAPBLOCKSIZE	(MAPBLOCKUNITS*FRACUNIT)
+#define MAPBLOCKSHIFT	(FRACBITS+7)
+#define MAPBMASK		(MAPBLOCKSIZE-1)
+#define MAPBTOFRAC		(MAPBLOCKSHIFT-FRACBITS)
 
 // player radius for movement checking
-    #define PLAYERRADIUS	16*FRACUNIT
+#define PLAYERRADIUS	16*FRACUNIT
 
 // MAXRADIUS is for precalculated sector block boxes
 // the spider demon is larger,
 // but we do not have any moving sectors nearby
-    #define MAXRADIUS		32*FRACUNIT
+#define MAXRADIUS		32*FRACUNIT
 
-    #define GRAVITY		FRACUNIT
-    #define MAXMOVE		(30*FRACUNIT)
+#define GRAVITY		FRACUNIT
+#define MAXMOVE		(30*FRACUNIT)
 
-    #define USERANGE		(64*FRACUNIT)
-    #define MELEERANGE		(64*FRACUNIT)
-    #define MISSILERANGE	(32*64*FRACUNIT)
+#define USERANGE		(64*FRACUNIT)
+#define MELEERANGE		(64*FRACUNIT)
+#define MISSILERANGE	(32*64*FRACUNIT)
 
 // follow a player exlusively for 3 seconds
-    #define BASETHRESHOLD	 	100
+#define BASETHRESHOLD	 	100
 
 //
 // P_TICK
@@ -81,11 +81,11 @@ void P_PlayerThink(player_t *player);
 //
 // P_MOBJ
 //
-    #define ONFLOORZ		D_MIN_INT
-    #define ONCEILINGZ		D_MAX_INT
+#define ONFLOORZ		D_MIN_INT
+#define ONCEILINGZ		D_MAX_INT
 
 // Time interval for item respawning.
-    #define ITEMQUESIZE		128
+#define ITEMQUESIZE		128
 
 extern mapthing_t itemrespawnque[ITEMQUESIZE];
 extern int itemrespawntime[ITEMQUESIZE];
@@ -133,7 +133,7 @@ typedef struct
     } d;
 } intercept_t;
 
-    #define MAXINTERCEPTS	128
+#define MAXINTERCEPTS	128
 
 extern intercept_t intercepts[MAXINTERCEPTS];
 extern intercept_t *intercept_p;
@@ -157,9 +157,9 @@ void P_LineOpening(line_t *linedef);
 boolean P_BlockLinesIterator(int x, int y, boolean (*func)(line_t *));
 boolean P_BlockThingsIterator(int x, int y, boolean (*func)(mobj_t *));
 
-    #define PT_ADDLINES		1
-    #define PT_ADDTHINGS	2
-    #define PT_EARLYOUT		4
+#define PT_ADDLINES		1
+#define PT_ADDTHINGS	2
+#define PT_EARLYOUT		4
 
 extern divline_t trace;
 
@@ -224,7 +224,7 @@ void P_DamageMobj(mobj_t *target, mobj_t *inflictor, mobj_t *source, int damage)
 //
 // P_SPEC
 //
-    #include "p_spec.h"
+#include "p_spec.h"
 
 #endif // __P_LOCAL__
 //-----------------------------------------------------------------------------

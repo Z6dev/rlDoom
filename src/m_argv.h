@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -16,9 +16,8 @@
 //
 // DESCRIPTION:
 //  Nil.
-//    
+//
 //-----------------------------------------------------------------------------
-
 
 #ifndef __M_ARGV__
 #define __M_ARGV__
@@ -27,13 +26,12 @@
 //
 // MISC
 //
-extern  d_int       myargc;
-extern  d_char**    myargv;
+extern d_int myargc;
+extern d_char **myargv;
 
 // Returns the position of the given parameter
 // in the arg list (0 if not found).
-d_int M_CheckParm (d_char* check);
-
+d_int M_CheckParm(d_char *check);
 
 #endif
 //-----------------------------------------------------------------------------

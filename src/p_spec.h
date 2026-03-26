@@ -23,7 +23,7 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __P_SPEC__
-    #define __P_SPEC__
+#define __P_SPEC__
 
 //
 // End-level timer (-TIMER option)
@@ -32,7 +32,7 @@ extern boolean levelTimer;
 extern int levelTimeCount;
 
 //      Define values for map objects
-    #define MO_TELEPORTMAN          14
+#define MO_TELEPORTMAN          14
 
 // at game start
 void P_InitPicAnims(void);
@@ -129,10 +129,10 @@ typedef struct
 
 } glow_t;
 
-    #define GLOWSPEED			8
-    #define STROBEBRIGHT		5
-    #define FASTDARK			15
-    #define SLOWDARK			35
+#define GLOWSPEED			8
+#define STROBEBRIGHT		5
+#define FASTDARK			15
+#define SLOWDARK			35
 
 void P_SpawnFireFlicker(sector_t *sector);
 void T_LightFlash(lightflash_t *flash);
@@ -178,13 +178,13 @@ typedef struct
 } button_t;
 
  // max # of wall switches in a level
-    #define MAXSWITCHES		50
+#define MAXSWITCHES		50
 
  // 4 players, 4 buttons each at once, max.
-    #define MAXBUTTONS		16
+#define MAXBUTTONS		16
 
  // 1 second, in ticks.
-    #define BUTTONTIME      35
+#define BUTTONTIME      35
 
 extern button_t buttonlist[MAXBUTTONS];
 
@@ -229,9 +229,9 @@ typedef struct
 
 } plat_t;
 
-    #define PLATWAIT		3
-    #define PLATSPEED		FRACUNIT
-    #define MAXPLATS		30
+#define PLATWAIT		3
+#define PLATSPEED		FRACUNIT
+#define MAXPLATS		30
 
 extern plat_t *activeplats[MAXPLATS];
 
@@ -278,8 +278,8 @@ typedef struct
 
 } vldoor_t;
 
-    #define VDOORSPEED		FRACUNIT*2
-    #define VDOORWAIT		150
+#define VDOORSPEED		FRACUNIT*2
+#define VDOORWAIT		150
 
 void EV_VerticalDoor(line_t *line, mobj_t *thing);
 
@@ -292,7 +292,7 @@ void P_SpawnDoorCloseIn30(sector_t *sec);
 
 void P_SpawnDoorRaiseIn5Mins(sector_t *sec, int secnum);
 
-    #if 0 // UNUSED
+#if 0 // UNUSED
 //
 //      Sliding doors...
 //
@@ -358,13 +358,13 @@ typedef struct
 
 
 // how many frames of animation
-        #define SNUMFRAMES		4
+#define SNUMFRAMES		4
 
-        #define SDOORWAIT		35*3
-        #define SWAITTICS		4
+#define SDOORWAIT		35*3
+#define SWAITTICS		4
 
 // how many diff. types of anims
-        #define MAXSLIDEDOORS	5                            
+#define MAXSLIDEDOORS	5                            
 
 void P_InitSlidingDoorFrames(void);
 
@@ -372,7 +372,7 @@ void
 EV_SlidingDoor
 ( line_t*	line,
   mobj_t*	thing );
-    #endif
+#endif
 
 //
 // P_CEILNG
@@ -406,9 +406,9 @@ typedef struct
 
 } ceiling_t;
 
-    #define CEILSPEED		FRACUNIT
-    #define CEILWAIT		150
-    #define MAXCEILINGS		30
+#define CEILSPEED		FRACUNIT
+#define CEILWAIT		150
+#define MAXCEILINGS		30
 
 extern ceiling_t *activeceilings[MAXCEILINGS];
 
@@ -477,7 +477,7 @@ typedef struct
 
 } floormove_t;
 
-    #define FLOORSPEED		FRACUNIT
+#define FLOORSPEED		FRACUNIT
 
 typedef enum {
     ok,
