@@ -1,0 +1,8 @@
+CompileFlags:
+  Add:
+    - -std=c99
+    - -xc
+    - -Wall
+    - -Wextra
+    - -ID:/coding/libs/raylib/src
+    - -ID:/coding/tools/w64devkit/include
