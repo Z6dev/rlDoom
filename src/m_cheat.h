@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -19,36 +19,27 @@
 //
 //-----------------------------------------------------------------------------
 
-
 #ifndef __M_CHEAT__
-#define __M_CHEAT__
+    #define __M_CHEAT__
 
 //
 // CHEAT SEQUENCE PACKAGE
 //
 
-#define SCRAMBLE(a) \
+    #define SCRAMBLE(a) \
 ((((a)&1)<<7) + (((a)&2)<<5) + ((a)&4) + (((a)&8)<<1) \
  + (((a)&16)>>1) + ((a)&32) + (((a)&64)>>5) + (((a)&128)>>7))
 
 typedef struct
 {
-    byte*	sequence;
-    byte*	p;
-    
+    byte *sequence;
+    byte *p;
+
 } cheatseq_t;
 
-int
-cht_CheckCheat
-( cheatseq_t*		cht,
-  d_char			key );
+int cht_CheckCheat(cheatseq_t *cht, d_char key);
 
-
-void
-cht_GetParam
-( cheatseq_t*		cht,
-  d_char*			buffer );
-
+void cht_GetParam(cheatseq_t *cht, d_char *buffer);
 
 #endif
 //-----------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -24,28 +24,18 @@
 #include "doomtype.h"
 #include "m_swap.h"
 
-
 // Not needed with big endian.
 #ifndef __BIG_ENDIAN__
 
 // Swap 16bit, that is, MSB and LSB byte.
-d_ushort SwapSHORT(d_ushort x)
-{
-    // No masking with 0xFF should be necessary. 
-    return (x>>8) | (x<<8);
+d_ushort SwapSHORT(d_ushort x) {
+    // No masking with 0xFF should be necessary.
+    return (x >> 8) | (x << 8);
 }
 
 // Swapping 32bit.
-d_ulong SwapLONG( d_ulong x)
-{
-    return
-	(x>>24)
-	| ((x>>8) & 0xff00)
-	| ((x<<8) & 0xff0000)
-	| (x<<24);
+d_ulong SwapLONG(d_ulong x) {
+    return (x >> 24) | ((x >> 8) & 0xff00) | ((x << 8) & 0xff0000) | (x << 24);
 }
 
-
 #endif
-
-

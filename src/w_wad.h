@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -19,11 +19,10 @@
 //
 //-----------------------------------------------------------------------------
 
-
 #ifndef __W_WAD__
-#define __W_WAD__
+    #define __W_WAD__
 
-#include "doomtype.h"
+    #include "doomtype.h"
 
 //
 // TYPES
@@ -31,19 +30,18 @@
 typedef struct
 {
     // Should be "IWAD" or "PWAD".
-    d_char		identification[4];
-    d_int		numlumps;
-    d_int		infotableofs;
-    
-} wadinfo_t;
+    d_char identification[4];
+    d_int numlumps;
+    d_int infotableofs;
 
+} wadinfo_t;
 
 typedef struct
 {
-    d_int		filepos;
-    d_int		size;
-    d_char		name[8];
-    
+    d_int filepos;
+    d_int size;
+    d_char name[8];
+
 } filelump_t;
 
 //
@@ -51,31 +49,27 @@ typedef struct
 //
 typedef struct
 {
-    d_char	name[8];
-    d_int	handle;
-    d_int	position;
-    d_int	size;
+    d_char name[8];
+    d_int handle;
+    d_int position;
+    d_int size;
 } lumpinfo_t;
 
+extern void **lumpcache;
+extern lumpinfo_t *lumpinfo;
+extern d_int numlumps;
 
-extern	void**      lumpcache;
-extern	lumpinfo_t* lumpinfo;
-extern	d_int       numlumps;
+void W_InitMultipleFiles(d_char **filenames);
+void W_Reload(void);
 
-void  W_InitMultipleFiles (d_char** filenames);
-void  W_Reload (void);
+d_int W_CheckNumForName(d_char *name);
+d_int W_GetNumForName(d_char *name);
 
-d_int W_CheckNumForName (d_char* name);
-d_int W_GetNumForName (d_char* name);
+d_int W_LumpLength(d_int lump);
+void W_ReadLump(d_int lump, void *dest);
 
-d_int W_LumpLength (d_int lump);
-void  W_ReadLump (d_int lump, void *dest);
-
-void* W_CacheLumpNum (d_int lump, d_int tag);
-void* W_CacheLumpName (d_char* name, d_int tag);
-
-
-
+void *W_CacheLumpNum(d_int lump, d_int tag);
+void *W_CacheLumpName(d_char *name, d_int tag);
 
 #endif
 //-----------------------------------------------------------------------------

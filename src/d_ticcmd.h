@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -19,11 +19,10 @@
 //
 //-----------------------------------------------------------------------------
 
-
 #ifndef __D_TICCMD__
-#define __D_TICCMD__
+    #define __D_TICCMD__
 
-#include "doomtype.h"
+    #include "doomtype.h"
 
 // The data sampled per tick (single player)
 // and transmitted to other peers (multiplayer).
@@ -31,15 +30,13 @@
 // plus a checksum for internal state consistency.
 typedef struct
 {
-    d_char	forwardmove;	// *2048 for move
-    d_char	sidemove;	// *2048 for move
-    d_short	angleturn;	// <<16 for angle delta
-    d_short	consistancy;	// checks for net game
-    byte	chatchar;
-    byte	buttons;
+    d_char forwardmove; // *2048 for move
+    d_char sidemove; // *2048 for move
+    d_short angleturn; // <<16 for angle delta
+    d_short consistancy; // checks for net game
+    byte chatchar;
+    byte buttons;
 } ticcmd_t;
-
-
 
 #endif
 //-----------------------------------------------------------------------------

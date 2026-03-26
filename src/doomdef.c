@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -27,20 +27,20 @@
 #include "doomdef.h"
 #include <ctype.h>
 
-const char GAMEMODES[ 5 ][ 13 ] = { {"SHAREWARE"}, {"REGISTERED"}, {"COMMERCIAL"}, {"RETAIL"}, {"INDETERMINED"} };
+const char GAMEMODES[5][13] = {{"SHAREWARE"}, {"REGISTERED"}, {"COMMERCIAL"}, {"RETAIL"}, {"INDETERMINED"}};
 
-boolean D_StrCaseEqual( const d_char *const left, const d_char *const right ) {
-    size_t length_left = strlen( left );
+boolean D_StrCaseEqual(const d_char *const left, const d_char *const right) {
+    size_t length_left = strlen(left);
 
-    if( length_left != strlen( right ) )
+    if (length_left != strlen(right))
         return false;
 
-    return D_StrNCaseEqual( left, right, length_left );
+    return D_StrNCaseEqual(left, right, length_left);
 }
 
-boolean D_StrNCaseEqual( const d_char *const left, const d_char *const right, size_t n ) {
-    for( size_t i = 0; left[i] != '\0' && i < n; i++)
-        if( toupper(left[i]) != toupper(right[i]) )
+boolean D_StrNCaseEqual(const d_char *const left, const d_char *const right, size_t n) {
+    for (size_t i = 0; left[i] != '\0' && i < n; i++)
+        if (toupper(left[i]) != toupper(right[i]))
             return false;
 
     return true;

@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -21,17 +21,16 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __SOUNDS__
-#define __SOUNDS__
+    #define __SOUNDS__
 
 //
 // SoundFX struct.
 //
 typedef struct sfxinfo_struct sfxinfo_t;
 
-struct sfxinfo_struct
-{
+struct sfxinfo_struct {
     // up to 6-character name
-    char* name;
+    char *name;
 
     // Sfx singularity (only one at a time)
     int singularity;
@@ -40,7 +39,7 @@ struct sfxinfo_struct
     int priority;
 
     // referenced sound if a link
-    sfxinfo_t* link;
+    sfxinfo_t *link;
 
     // pitch if a link
     int pitch;
@@ -49,7 +48,7 @@ struct sfxinfo_struct
     int volume;
 
     // sound data
-    void* data;
+    void *data;
 
     // this is checked every second to see if sound
     // can be thrown out (if 0, then decrement, if -1,
@@ -60,30 +59,24 @@ struct sfxinfo_struct
     int lumpnum;
 };
 
-
-
-
 //
 // MusicInfo struct.
 //
 typedef struct
 {
     // up to 6-character name
-    char* name;
+    char *name;
 
     // lump number of music
     int lumpnum;
-    
+
     // music data
-    void* data;
+    void *data;
 
     // music handle once registered
     int handle;
-    
+
 } musicinfo_t;
-
-
-
 
 // the complete set of sound effects
 extern sfxinfo_t S_sfx[];
@@ -95,8 +88,7 @@ extern musicinfo_t S_music[];
 // Identifiers for all music in game.
 //
 
-typedef enum
-{
+typedef enum {
     mus_None,
     mus_e1m1,
     mus_e1m2,
@@ -168,13 +160,11 @@ typedef enum
     NUMMUSIC
 } musicenum_t;
 
-
 //
 // Identifiers for all sfx in game.
 //
 
-typedef enum
-{
+typedef enum {
     sfx_None,
     sfx_pistol,
     sfx_shotgn,
@@ -293,4 +283,3 @@ typedef enum
 // $Log:$
 //
 //-----------------------------------------------------------------------------
-

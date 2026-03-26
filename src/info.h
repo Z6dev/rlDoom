@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -22,13 +22,12 @@
 //-----------------------------------------------------------------------------
 
 #ifndef __INFO__
-#define __INFO__
+    #define __INFO__
 
 // Needed for action function pointer handling.
-#include "d_think.h"
+    #include "d_think.h"
 
-typedef enum
-{
+typedef enum {
     SPR_TROO,
     SPR_SHTG,
     SPR_PUNG,
@@ -171,8 +170,7 @@ typedef enum
 
 } spritenum_t;
 
-typedef enum
-{
+typedef enum {
     S_NULL,
     S_LIGHTDONE,
     S_PUNCH,
@@ -1143,22 +1141,19 @@ typedef enum
     NUMSTATES
 } statenum_t;
 
-
 typedef struct
 {
-  spritenum_t	sprite;
-  d_long			frame;
-  d_long			tics;
+    spritenum_t sprite;
+    d_long frame;
+    d_long tics;
   // void		(*action) ();
-  actionf_t			action;
-  statenum_t			nextstate;
-  d_long			misc1, misc2;
+    actionf_t action;
+    statenum_t nextstate;
+    d_long misc1, misc2;
 } state_t;
 
-extern state_t	states[NUMSTATES];
+extern state_t states[NUMSTATES];
 extern d_char *sprnames[NUMSPRITES];
-
-
 
 typedef enum {
     MT_PLAYER,
@@ -1304,29 +1299,29 @@ typedef enum {
 
 typedef struct
 {
-    d_int	doomednum;
-    d_int	spawnstate;
-    d_int	spawnhealth;
-    d_int	seestate;
-    d_int	seesound;
-    d_int	reactiontime;
-    d_int	attacksound;
-    d_int	painstate;
-    d_int	painchance;
-    d_int	painsound;
-    d_int	meleestate;
-    d_int	missilestate;
-    d_int	deathstate;
-    d_int	xdeathstate;
-    d_int	deathsound;
-    d_int	speed;
-    d_int	radius;
-    d_int	height;
-    d_int	mass;
-    d_int	damage;
-    d_int	activesound;
-    d_int	flags;
-    d_int	raisestate;
+    d_int doomednum;
+    d_int spawnstate;
+    d_int spawnhealth;
+    d_int seestate;
+    d_int seesound;
+    d_int reactiontime;
+    d_int attacksound;
+    d_int painstate;
+    d_int painchance;
+    d_int painsound;
+    d_int meleestate;
+    d_int missilestate;
+    d_int deathstate;
+    d_int xdeathstate;
+    d_int deathsound;
+    d_int speed;
+    d_int radius;
+    d_int height;
+    d_int mass;
+    d_int damage;
+    d_int activesound;
+    d_int flags;
+    d_int raisestate;
 
 } mobjinfo_t;
 

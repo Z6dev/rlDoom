@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -20,31 +20,28 @@
 //
 //-----------------------------------------------------------------------------
 
-
 #ifndef __R_DATA__
-#define __R_DATA__
+    #define __R_DATA__
 
-#include "r_defs.h"
-#include "r_state.h"
+    #include "r_defs.h"
+    #include "r_state.h"
 
 // Retrieve column data for span blitting.
-byte* R_GetColumn ( d_int tex, d_int col );
+byte *R_GetColumn(d_int tex, d_int col);
 
 // I/O, setting up the stuff.
-void R_InitData (void);
-void R_PrecacheLevel (void);
-
+void R_InitData(void);
+void R_PrecacheLevel(void);
 
 // Retrieval.
 // Floor/ceiling opaque texture tiles,
 // lookup by name. For animation?
-d_int R_FlatNumForName (d_char* name);
-
+d_int R_FlatNumForName(d_char *name);
 
 // Called by P_Ticker for switches and animations,
 // returns the texture number for the texture name.
-d_int R_TextureNumForName (d_char *name);
-d_int R_CheckTextureNumForName (d_char *name);
+d_int R_TextureNumForName(d_char *name);
+d_int R_CheckTextureNumForName(d_char *name);
 
 #endif
 //-----------------------------------------------------------------------------

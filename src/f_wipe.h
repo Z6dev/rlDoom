@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -16,51 +16,36 @@
 //
 // DESCRIPTION:
 //	Mission start screen wipe/melt, special effects.
-//	
+//
 //-----------------------------------------------------------------------------
 
-
 #ifndef __F_WIPE_H__
-#define __F_WIPE_H__
+    #define __F_WIPE_H__
 
 //
 //                       SCREEN WIPE PACKAGE
 //
 
-enum
-{
+enum {
     // simple gradual pixel change for 8-bit only
     wipe_ColorXForm,
-    
+
     // weird screen melt
-    wipe_Melt,	
+    wipe_Melt,
 
     wipe_NUMWIPES
 };
 
 d_int wipe_StartScreen(
-  d_int x,
-  d_int y,
-  d_int width,
-  d_int height );
+    d_int x,
+    d_int y,
+    d_int width,
+    d_int height
+);
 
+d_int wipe_EndScreen(d_int x, d_int y, d_int width, d_int height);
 
-d_int
-wipe_EndScreen
-( d_int		x,
-  d_int		y,
-  d_int		width,
-  d_int		height );
-
-
-d_int
-wipe_ScreenWipe
-( d_int		wipeno,
-  d_int		x,
-  d_int		y,
-  d_int		width,
-  d_int		height,
-  d_int		ticks );
+d_int wipe_ScreenWipe(d_int wipeno, d_int x, d_int y, d_int width, d_int height, d_int ticks);
 
 #endif
 //-----------------------------------------------------------------------------

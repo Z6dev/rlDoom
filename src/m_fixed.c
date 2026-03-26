@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -33,36 +33,23 @@
 // Fixme. __USE_C_FIXED__ or something.
 
 fixed_t
-FixedMul
-( fixed_t	a,
-  fixed_t	b )
-{
-    return ((int64_t) a * (int64_t) b) >> FRACBITS;
+FixedMul(fixed_t a, fixed_t b) {
+    return ((int64_t)a * (int64_t)b) >> FRACBITS;
 }
-
-
 
 //
 // FixedDiv, C version.
 //
 
 fixed_t
-FixedDiv
-( fixed_t	a,
-  fixed_t	b )
-{
-    if ( (abs(a)>>14) >= abs(b))
-	return (a^b)<0 ? D_MIN_INT : D_MAX_INT;
-    return FixedDiv2 (a,b);
+FixedDiv(fixed_t a, fixed_t b) {
+    if ((abs(a) >> 14) >= abs(b))
+        return (a ^ b) < 0 ? D_MIN_INT : D_MAX_INT;
+    return FixedDiv2(a, b);
 }
 
-
-
 fixed_t
-FixedDiv2
-( fixed_t	a,
-  fixed_t	b )
-{
+FixedDiv2(fixed_t a, fixed_t b) {
 #if 0
     long long c;
     c = ((long long)a<<16) / ((long long)b);
@@ -74,6 +61,6 @@ FixedDiv2
     c = ((double)a) / ((double)b) * FRACUNIT;
 
     if (c >= 2147483648.0 || c < -2147483648.0)
-	I_Error("FixedDiv: divide by zero");
-    return (fixed_t) c;
+        I_Error("FixedDiv: divide by zero");
+    return (fixed_t)c;
 }

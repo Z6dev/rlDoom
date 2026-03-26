@@ -1,4 +1,4 @@
-// Emacs style mode select   -*- C++ -*- 
+// Emacs style mode select   -*- C++ -*-
 //-----------------------------------------------------------------------------
 //
 // $Id:$
@@ -27,32 +27,18 @@
 #include "doomtype.h"
 #include "m_bbox.h"
 
-
-
-
-void M_ClearBox (fixed_t *box)
-{
+void M_ClearBox(fixed_t *box) {
     box[BOXTOP] = box[BOXRIGHT] = D_MIN_INT;
     box[BOXBOTTOM] = box[BOXLEFT] = D_MAX_INT;
 }
 
-void
-M_AddToBox
-( fixed_t*	box,
-  fixed_t	x,
-  fixed_t	y )
-{
-    if (x<box[BOXLEFT])
-	box[BOXLEFT] = x;
-    else if (x>box[BOXRIGHT])
-	box[BOXRIGHT] = x;
-    if (y<box[BOXBOTTOM])
-	box[BOXBOTTOM] = y;
-    else if (y>box[BOXTOP])
-	box[BOXTOP] = y;
+void M_AddToBox(fixed_t *box, fixed_t x, fixed_t y) {
+    if (x < box[BOXLEFT])
+        box[BOXLEFT] = x;
+    else if (x > box[BOXRIGHT])
+        box[BOXRIGHT] = x;
+    if (y < box[BOXBOTTOM])
+        box[BOXBOTTOM] = y;
+    else if (y > box[BOXTOP])
+        box[BOXTOP] = y;
 }
-
-
-
-
-
